@@ -27,7 +27,7 @@ const{name,percentage,branch}=user
 
 
   const loadUser = async ()=>{
-    const result= await axios.get(`http://localhost:8080/students/${id}`)
+    const result= await axios.get(`${process.env.REACT_APP_API_URL}/students/${id}`)
     setUser(result.data)
 }
 
@@ -40,7 +40,7 @@ useEffect(()=>{
 const onSubmitBut=async(e)=>{
 
   e.preventDefault();
-  await axios.put(`http://localhost:8080/student/update/${id}`, user)
+  await axios.put(`${process.env.REACT_APP_API_URL}/student/update/${id}`, user)
   navigate("/")
 }
 

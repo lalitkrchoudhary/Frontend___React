@@ -22,7 +22,7 @@ const{name,percentage,branch}=user
 const onSubmitBut=async(e)=>{
 
   e.preventDefault();
-  await axios.post("http://localhost:8080/student/add",user)
+  await axios.post(`${process.env.REACT_APP_API_URL}/student/add`,user)
   navigate("/")
 }
 

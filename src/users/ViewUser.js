@@ -21,7 +21,7 @@ export const ViewUser = () => {
 
 
 const loadUser= async()=>{
-const result = await axios.get(`http://localhost:8080/students/${id}`)
+const result = await axios.get(`${process.env.REACT_APP_API_URL}/students/${id}`)
 console.log(result.data)
 setUser(result.data)
 }

@@ -15,13 +15,14 @@ useEffect(()=>{
 
 const loadUsers= async ()=>{
   console.log(`Here : ${process.env.REACT_APP_API_URL}`)
-  const result = await axios.get("http://localhost:8080/students")
+  const result = await axios.get(`${process.env.REACT_APP_API_URL}/students`)
   console.log(result.data)
   setUsers(result.data)
 }
 
 const deleteUser=async (id)=>{
- await axios.delete(`http://localhost:8080/student/delete/${id}`)
+// await axios.delete(`http://localhost:8080/student/delete/${id}`)
+ await axios.delete(`${process.env.REACT_APP_API_URL}/student/delete/${id}`)
  loadUsers()
 }
 
